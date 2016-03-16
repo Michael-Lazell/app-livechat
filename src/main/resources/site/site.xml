@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+  <config>
+    <input type="TextLine" name="email">
+      <label>Same email address used for LiveChat account</label>
+      <occurrences minimum="0" maximum="1"/>
+    </input>
+  </config>
+  <filters>
+    <response-filter name="livechat" order="10"/>
+  </filters>
+</site>

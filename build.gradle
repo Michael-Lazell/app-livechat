@@ -1,0 +1,60 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        jcenter()
+        maven {
+            url 'http://repo.enonic.com/public'
+        }
+    }
+
+    dependencies {
+        classpath "com.enonic.xp:gradle-plugin:${xpVersion}"
+        classpath "com.jfrog.bintray.gradle:gradle-bintray-plugin:1.6"
+    }
+}
+
+apply plugin: 'com.enonic.xp.app'
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'java'
+
+app {
+    name = project.appName
+    displayName = project.displayName
+    vendorName = 'Michael Lazell of Enonic USA'
+    vendorUrl = 'http://enonic.com'
+}
+
+bintray {
+    user = System.getenv('BINTRAY_USER')
+    key = System.getenv('BINTRAY_KEY')
+    configurations = ['archives']
+    pkg {
+        repo = 'maven'
+        name = project.appName
+        userOrg = 'mla'
+        licenses = ['Apache-2.0']
+        vcsUrl = 'https://github.com/Michael-Lazell/app-livechat.git'
+        version {
+            name = project.version
+            released = new Date()
+        }
+    }
+}
+
+dependencies {
+    compile "com.enonic.xp:core-api:${xpVersion}"
+    compile "com.enonic.xp:portal-api:${xpVersion}"
+    include "com.enonic.xp:lib-content:${xpVersion}"
+    include "com.enonic.xp:lib-portal:${xpVersion}"
+    include "com.enonic.xp:lib-thymeleaf:${xpVersion}"
+    include "com.enonic.xp:lib-cache:${xpVersion}"
+    include "com.enonic.xp:lib-http-client:${xpVersion}"
+}
+
+repositories {
+    mavenLocal()
+    jcenter()
+    maven {
+        url 'http://repo.enonic.com/public'
+    }
+}
