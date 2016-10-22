@@ -1,6 +1,6 @@
-var portal = require('/lib/xp/portal');
-var cacheLib = require('/lib/xp/cache');
-var httpClient = require('/lib/xp/http-client');
+var portal = require('/lib/xp/portal'),
+    cacheLib = require('/lib/xp/cache'),
+    httpClient = require('/lib/xp/http-client');
 
 var cache = cacheLib.newCache({
     size: 1
@@ -43,7 +43,7 @@ exports.responseFilter = function (req, res) {
             log.error('LiveChat service error.');
         }
 
-        if (!data || data.error ) {
+        if (!data || data.error) {
             data = {};
         }
         // Cannot return null

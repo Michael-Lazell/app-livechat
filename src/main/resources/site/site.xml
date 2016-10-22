@@ -2,7 +2,8 @@
 <site>
   <config>
     <input type="TextLine" name="email">
-      <label>Same email address used for LiveChat account</label>
+      <label>LiveChat email address</label>
+      <help-text>Enter the same email address that is used for your LiveChat account</help-text>
       <occurrences minimum="0" maximum="1"/>
     </input>
   </config>

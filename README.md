@@ -20,8 +20,18 @@ Open the **Content Studio** admin tool. Edit the site content that you want to a
 
 | Version       | XP version |
 | ------------- | ---------- |
+| 1.1.0         | 6.7.0      |
 | 1.0.0         | 6.4.2      |
 
+## Changelog
+
+Version 1.2.0
+
+* Added app icon.
+* Added app description.
+* Removed unused libraries.
+* Optimized code.
+* Added help-text to the app config form.
 
 ## Copyright and license
 
